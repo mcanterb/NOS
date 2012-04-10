@@ -9,7 +9,7 @@
 const char *hello;
 const unsigned int *kernelSize = (unsigned int *)0xF0001804;
 
-void main()
+void __main()
 {
 	clrscr();
 	print(hello);

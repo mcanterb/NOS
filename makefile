@@ -45,16 +45,14 @@ bin/idt.o:
 		
 
 install: bin/MYOS.BIN
-		copy bin\MYOS.BIN B:\ 
+		cp bin\MYOS.BIN B:\ 
 		bin\vfd.exe save
 		
 clean:
-		cd bin
-		del *.bin
-		del *.o
-		cd ..
+		rm bin/*.BIN
+		rm bin/*.o
 		
 boot:   boot/bootloader_stage2.asm
 		nasm -f bin -o bin/BOOT.BIN boot/bootloader_stage2.asm
-		copy bin\BOOT.BIN B:\ 
-		bin\vfd.exe save
+		cp bin/BOOT.BIN B:/ 
+		../bin/vfd.exe save
